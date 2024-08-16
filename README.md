@@ -18,6 +18,7 @@ This project follows a microservices architecture, with each API built using a m
 - Manages user accounts, and on startup, it creates a default admin user if none exists, using settings from AdminUserSettings in appsettings.json.
 - Operates with its own MongoDB instance, configured via the MongoDbSettings in appsettings.json.
 - Bearer tokens should be included in the Authorization header for all requests made to secured endpoints. This ensures that only authenticated and authorized users can access protected resources across the services.
+- Please authorize requests with the following format: Bearer <created_access_token>
 
 *MovieSearch Service*  
 - Handles requests to the OMDB API to retrieve movie details and logs these searches through the SearchLog API.
@@ -41,8 +42,13 @@ This project follows a microservices architecture, with each API built using a m
 - *Logging*: Serilog is integrated for logging information and errors.
 - *Performance Enhancements*: Memory caching is implemented for all GET functions, and pagination is included for list-returning methods.
 - *Testing*: Comprehensive unit tests are included for all Business and API projects.
+- *Swagger Configuration*: Swagger is configured to include the Authorization header.
 
 ### Assumptions
 
 - Services are expected to run with HTTPS configuration. To run on different URLs, update the ApiBase in appsettings.json for the Admin and MovieSearch projects.
 - MongoDB connection strings do not include credentials by default. If needed, credentials can be added in MongoDbSettings in appsettings.json for the Identity and SearchLog projects.
+
+- ### Default Admin Credentials
+- **Username:** admin
+- **Password:** Admin_*2024
