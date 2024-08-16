@@ -17,6 +17,7 @@ This project follows a microservices architecture, with each API built using a m
 - Token settings can be customized via the JwtTokenSettings section in appsettings.json.
 - Manages user accounts, and on startup, it creates a default admin user if none exists, using settings from AdminUserSettings in appsettings.json.
 - Operates with its own MongoDB instance, configured via the MongoDbSettings in appsettings.json.
+- Bearer tokens should be included in the Authorization header for all requests made to secured endpoints. This ensures that only authenticated and authorized users can access protected resources across the services.
 
 *MovieSearch Service*  
 - Handles requests to the OMDB API to retrieve movie details and logs these searches through the SearchLog API.
