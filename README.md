@@ -43,6 +43,7 @@ This project follows a microservices architecture, with each API built using a m
 - *Performance Enhancements*: Memory caching is implemented for all GET functions, and pagination is included for list-returning methods.
 - *Testing*: Comprehensive unit tests are included for all Business and API projects.
 - *Swagger Configuration*: Swagger is configured to include the Authorization header.
+- *Flexible Authentication*: Adjusting the JwtTokenSettings configuration of the services allows APIs to accept any JWT token, providing flexibility to work with different options.
 
 ### Assumptions
 
